@@ -1,0 +1,6 @@
+framework module Pods_ForHJH {
+  umbrella header "Pods-ForHJH-umbrella.h"
+
+  export *
+  module * { export * }
+}
