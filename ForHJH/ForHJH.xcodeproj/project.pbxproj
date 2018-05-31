@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B40199B2579435DA4FB77AEF /* Pods_ForHJH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7A078FBA06B92E806963AF /* Pods_ForHJH.framework */; };
+		F9A3F4E620C00A0F00C3EAA7 /* UIbutton+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F4E520C00A0F00C3EAA7 /* UIbutton+Extention.swift */; };
+		F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F4E720C00D2600C3EAA7 /* LoginViewController.swift */; };
+		F9A3F4EB20C0110000C3EAA7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A3F4EC20C0110000C3EAA7 /* SnapKit.framework */; };
+		F9A3F4F020C0160D00C3EAA7 /* Comman.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F4EF20C0160D00C3EAA7 /* Comman.swift */; };
 		F9D82E8520BFF37800744560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D82E8420BFF37800744560 /* AppDelegate.swift */; };
 		F9D82E8C20BFF37800744560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D82E8B20BFF37800744560 /* Assets.xcassets */; };
 		F9D82E8F20BFF37800744560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D82E8D20BFF37800744560 /* LaunchScreen.storyboard */; };
@@ -20,6 +24,11 @@
 		6E7A078FBA06B92E806963AF /* Pods_ForHJH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForHJH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A689AE9E85722198F0010704 /* Pods-ForHJH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForHJH.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH.release.xcconfig"; sourceTree = "<group>"; };
 		E2D55A791819847D8482D096 /* Pods-ForHJH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForHJH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH.debug.xcconfig"; sourceTree = "<group>"; };
+		F9A3F4E520C00A0F00C3EAA7 /* UIbutton+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIbutton+Extention.swift"; sourceTree = "<group>"; };
+		F9A3F4E720C00D2600C3EAA7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F9A3F4EA20C010D200C3EAA7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9A3F4EC20C0110000C3EAA7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9A3F4EF20C0160D00C3EAA7 /* Comman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comman.swift; sourceTree = "<group>"; };
 		F9D82E8120BFF37800744560 /* ForHJH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForHJH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D82E8420BFF37800744560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D82E8B20BFF37800744560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A3F4EB20C0110000C3EAA7 /* SnapKit.framework in Frameworks */,
 				B40199B2579435DA4FB77AEF /* Pods_ForHJH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +55,8 @@
 		8B194297F2FF7E7049FD76BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9A3F4EC20C0110000C3EAA7 /* SnapKit.framework */,
+				F9A3F4EA20C010D200C3EAA7 /* SnapKit.framework */,
 				6E7A078FBA06B92E806963AF /* Pods_ForHJH.framework */,
 			);
 			name = Frameworks;
@@ -57,6 +69,39 @@
 				A689AE9E85722198F0010704 /* Pods-ForHJH.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F9A3F4DF20C009B200C3EAA7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F4E720C00D2600C3EAA7 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F9A3F4E120C009D800C3EAA7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F4ED20C0140500C3EAA7 /* PCH */,
+				F9A3F4E220C009D800C3EAA7 /* Tools */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F9A3F4E220C009D800C3EAA7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F4E520C00A0F00C3EAA7 /* UIbutton+Extention.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		F9A3F4ED20C0140500C3EAA7 /* PCH */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F4EF20C0160D00C3EAA7 /* Comman.swift */,
+			);
+			path = PCH;
 			sourceTree = "<group>";
 		};
 		F9D82E7820BFF37700744560 = {
@@ -92,9 +137,9 @@
 		F9D82E9620BFF4E900744560 /* Classess */ = {
 			isa = PBXGroup;
 			children = (
-				F9D82E9920BFF4FC00744560 /* Other */,
+				F9A3F4E120C009D800C3EAA7 /* Other */,
+				F9A3F4DF20C009B200C3EAA7 /* Login */,
 				F9D82E9720BFF4E900744560 /* Base */,
-				F9D82E9820BFF4E900744560 /* Login */,
 			);
 			path = Classess;
 			sourceTree = "<group>";
@@ -107,20 +152,6 @@
 				F9D82EA220BFF5E600744560 /* BaseViewController.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		F9D82E9820BFF4E900744560 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		F9D82E9920BFF4FC00744560 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +234,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -211,6 +243,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -259,8 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A3F4F020C0160D00C3EAA7 /* Comman.swift in Sources */,
+				F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */,
 				F9D82E9F20BFF5BF00744560 /* BaseTableViewController.swift in Sources */,
 				F9D82EA320BFF5E600744560 /* BaseViewController.swift in Sources */,
+				F9A3F4E620C00A0F00C3EAA7 /* UIbutton+Extention.swift in Sources */,
 				F9D82EA120BFF5D800744560 /* BaseNavController.swift in Sources */,
 				F9D82E8520BFF37800744560 /* AppDelegate.swift in Sources */,
 			);
@@ -394,10 +430,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7X2WW2UAU;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ForHJH/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenyouwen.ForHJH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,10 +450,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7X2WW2UAU;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ForHJH/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenyouwen.ForHJH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
