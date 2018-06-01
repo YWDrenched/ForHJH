@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SVProgressHUD
 
 class LoginViewController: BaseViewController {
     
@@ -19,13 +20,27 @@ class LoginViewController: BaseViewController {
         
         setupUI()
     }
-    
     private func setupUI(){
+        
         view.addSubview(logImg)
         logImg.addSubview(loginBtn)
+        logImg.addSubview(userNameFiled)
+        logImg.addSubview(passwordFiled)
+        
+        
         loginBtn.snp.makeConstraints { (make)-> Void in
             make.bottom.equalTo(view).offset(-50)
             make.centerX.equalTo(view)
+        }
+        userNameFiled.snp.makeConstraints { (make)->Void in
+            make.centerX.equalTo(view)
+            make.left.equalTo(view).offset(20)
+            make.top.equalTo(view).offset(80)
+        }
+        passwordFiled.snp.makeConstraints { (make)->Void in
+            make.centerX.equalTo(view)
+            make.left.equalTo(view).offset(20)
+            make.top.equalTo(userNameFiled.snp.bottom).offset(20)
         }
         
     }
@@ -41,8 +56,27 @@ class LoginViewController: BaseViewController {
         logImg.frame = view.bounds
         return logImg
     }()
+    lazy var userNameFiled: UITextField = {
+        var userNameFiled = UITextField()
+        userNameFiled.placeholder = "输入爱的的号码牌"
+        userNameFiled.borderStyle = .roundedRect
+        return userNameFiled
+    }()
+    
+    lazy var passwordFiled: UITextField = {
+        var userNameFiled = UITextField()
+        userNameFiled.placeholder = "输入爱的的指令"
+        userNameFiled.borderStyle = .roundedRect
+        return userNameFiled
+    }()
     
     @objc private func hahah() {
-        print("2");
+        if userNameFiled.text != "xiaohuang" && passwordFiled.text != "xiaohuang" {
+            SVProgressHUD.showError(withStatus: "请输入正确的号码牌")
+            return
+        }
+        modalPresentationStyle = .pageSheet
+        present(HomeViewController(), animated: true, completion: nil)
+        
     }
 }

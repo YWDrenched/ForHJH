@@ -10,11 +10,27 @@ import UIKit
 
 
 class BaseTableViewController: UITableViewController {
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        let arr = [
+        ["title": "要吃","img":"tab_icon_friend","vc":"LoginViewController"],
+        ["title": "要吃","img":"tab_icon_friend","vc":"LoginViewController"],
+        ["title": "要吃","img":"tab_icon_friend","vc":"LoginViewController"]
+        ]
+       
+    }
+    
+    
+    private func loadVC(strImg:String,title:String,VC:UIViewController){
+        self.title = title
+        self.tabBarItem.image = UIImage(named: strImg+"_normal")
+        self.tabBarItem.selectedImage = UIImage(named:strImg + "_press")
+        let navVC = BaseNavController(rootViewController: VC)
+        addChildViewController(navVC)
     }
 
     override func didReceiveMemoryWarning() {

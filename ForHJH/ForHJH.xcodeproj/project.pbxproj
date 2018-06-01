@@ -12,6 +12,9 @@
 		F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F4E720C00D2600C3EAA7 /* LoginViewController.swift */; };
 		F9A3F4EB20C0110000C3EAA7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A3F4EC20C0110000C3EAA7 /* SnapKit.framework */; };
 		F9A3F4F020C0160D00C3EAA7 /* Comman.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F4EF20C0160D00C3EAA7 /* Comman.swift */; };
+		F9A3F4F820C0343200C3EAA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F4F720C0343200C3EAA7 /* HomeViewController.swift */; };
+		F9A3F50220C034A800C3EAA7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F50120C034A800C3EAA7 /* ProfileViewController.swift */; };
+		F9A3F50420C034BB00C3EAA7 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F50320C034BB00C3EAA7 /* FavoriteViewController.swift */; };
 		F9D82E8520BFF37800744560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D82E8420BFF37800744560 /* AppDelegate.swift */; };
 		F9D82E8C20BFF37800744560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D82E8B20BFF37800744560 /* Assets.xcassets */; };
 		F9D82E8F20BFF37800744560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D82E8D20BFF37800744560 /* LaunchScreen.storyboard */; };
@@ -29,6 +32,9 @@
 		F9A3F4EA20C010D200C3EAA7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A3F4EC20C0110000C3EAA7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A3F4EF20C0160D00C3EAA7 /* Comman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comman.swift; sourceTree = "<group>"; };
+		F9A3F4F720C0343200C3EAA7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F9A3F50120C034A800C3EAA7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F9A3F50320C034BB00C3EAA7 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		F9D82E8120BFF37800744560 /* ForHJH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForHJH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D82E8420BFF37800744560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D82E8B20BFF37800744560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +110,102 @@
 			path = PCH;
 			sourceTree = "<group>";
 		};
+		F9A3F4F120C032F900C3EAA7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F4F520C0341E00C3EAA7 /* Controller */,
+				F9A3F4F620C0341E00C3EAA7 /* Model */,
+				F9A3F4F420C0341E00C3EAA7 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F9A3F4F420C0341E00C3EAA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9A3F4F520C0341E00C3EAA7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F4F720C0343200C3EAA7 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9A3F4F620C0341E00C3EAA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9A3F4F920C0343E00C3EAA7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F4FA20C0343E00C3EAA7 /* Controller */,
+				F9A3F4FB20C0343E00C3EAA7 /* Model */,
+				F9A3F4FC20C0343E00C3EAA7 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F9A3F4FA20C0343E00C3EAA7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F50120C034A800C3EAA7 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9A3F4FB20C0343E00C3EAA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9A3F4FC20C0343E00C3EAA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9A3F4FD20C0349C00C3EAA7 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F4FE20C0349C00C3EAA7 /* Controller */,
+				F9A3F4FF20C0349C00C3EAA7 /* Model */,
+				F9A3F50020C0349C00C3EAA7 /* View */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		F9A3F4FE20C0349C00C3EAA7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9A3F50320C034BB00C3EAA7 /* FavoriteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9A3F4FF20C0349C00C3EAA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9A3F50020C0349C00C3EAA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F9D82E7820BFF37700744560 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +241,9 @@
 			children = (
 				F9A3F4E120C009D800C3EAA7 /* Other */,
 				F9A3F4DF20C009B200C3EAA7 /* Login */,
+				F9A3F4F120C032F900C3EAA7 /* Main */,
+				F9A3F4F920C0343E00C3EAA7 /* Profile */,
+				F9A3F4FD20C0349C00C3EAA7 /* Favorite */,
 				F9D82E9720BFF4E900744560 /* Base */,
 			);
 			path = Classess;
@@ -295,8 +400,11 @@
 				F9A3F4F020C0160D00C3EAA7 /* Comman.swift in Sources */,
 				F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */,
 				F9D82E9F20BFF5BF00744560 /* BaseTableViewController.swift in Sources */,
+				F9A3F4F820C0343200C3EAA7 /* HomeViewController.swift in Sources */,
+				F9A3F50420C034BB00C3EAA7 /* FavoriteViewController.swift in Sources */,
 				F9D82EA320BFF5E600744560 /* BaseViewController.swift in Sources */,
 				F9A3F4E620C00A0F00C3EAA7 /* UIbutton+Extention.swift in Sources */,
+				F9A3F50220C034A800C3EAA7 /* ProfileViewController.swift in Sources */,
 				F9D82EA120BFF5D800744560 /* BaseNavController.swift in Sources */,
 				F9D82E8520BFF37800744560 /* AppDelegate.swift in Sources */,
 			);
