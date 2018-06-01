@@ -29,6 +29,12 @@ func kRandomColor(r:Float , g:Float , b:Float) -> UIColor {
 let kNavHeight:Int = 64
 let kTabbarHeight:Int = 49
 
+extension Bundle{
+    func namespace() -> String {
+        return Bundle.main.infoDictionary?["CFBundleName"]  as? String ?? ""
+    }
+}
+
 
 
 

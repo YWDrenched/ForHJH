@@ -71,12 +71,16 @@ class LoginViewController: BaseViewController {
     }()
     
     @objc private func hahah() {
-        if userNameFiled.text != "xiaohuang" && passwordFiled.text != "xiaohuang" {
+        if userNameFiled.text != "1" && passwordFiled.text != "1" {
             SVProgressHUD.showError(withStatus: "请输入正确的号码牌")
             return
         }
         modalPresentationStyle = .pageSheet
-        present(HomeViewController(), animated: true, completion: nil)
+        present(BaseTableViewController(), animated: true, completion: nil)
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
