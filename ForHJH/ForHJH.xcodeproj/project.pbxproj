@@ -21,12 +21,17 @@
 		F9D82E9F20BFF5BF00744560 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D82E9E20BFF5BF00744560 /* BaseTableViewController.swift */; };
 		F9D82EA120BFF5D800744560 /* BaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D82EA020BFF5D800744560 /* BaseNavController.swift */; };
 		F9D82EA320BFF5E600744560 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D82EA220BFF5E600744560 /* BaseViewController.swift */; };
+		F9EC449B20C12B0500172408 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EC449A20C12B0500172408 /* LocationModel.swift */; };
+		F9EC449E20C12B5F00172408 /* locationData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9EC449D20C12B5F00172408 /* locationData.plist */; };
+		F9EC44A020C132A000172408 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = F9EC449F20C132A000172408 /* data.json */; };
+		F9EC44A220C13F1900172408 /* CYWNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EC44A120C13F1900172408 /* CYWNetWorkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E7A078FBA06B92E806963AF /* Pods_ForHJH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForHJH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A689AE9E85722198F0010704 /* Pods-ForHJH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForHJH.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH.release.xcconfig"; sourceTree = "<group>"; };
 		E2D55A791819847D8482D096 /* Pods-ForHJH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForHJH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH.debug.xcconfig"; sourceTree = "<group>"; };
+		F96C514E20C1155E003D0A57 /* officialDemoNavi-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "officialDemoNavi-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9A3F4E520C00A0F00C3EAA7 /* UIbutton+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIbutton+Extention.swift"; sourceTree = "<group>"; };
 		F9A3F4E720C00D2600C3EAA7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F9A3F4EA20C010D200C3EAA7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +48,10 @@
 		F9D82E9E20BFF5BF00744560 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		F9D82EA020BFF5D800744560 /* BaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavController.swift; sourceTree = "<group>"; };
 		F9D82EA220BFF5E600744560 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F9EC449A20C12B0500172408 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		F9EC449D20C12B5F00172408 /* locationData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = locationData.plist; sourceTree = "<group>"; };
+		F9EC449F20C132A000172408 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		F9EC44A120C13F1900172408 /* CYWNetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYWNetWorkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +97,7 @@
 		F9A3F4E120C009D800C3EAA7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				F9A3F4ED20C0140500C3EAA7 /* PCH */,
+				F9A3F4ED20C0140500C3EAA7 /* Comman */,
 				F9A3F4E220C009D800C3EAA7 /* Tools */,
 			);
 			path = Other;
@@ -97,34 +106,29 @@
 		F9A3F4E220C009D800C3EAA7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F9EC44A120C13F1900172408 /* CYWNetWorkManager.swift */,
 				F9A3F4E520C00A0F00C3EAA7 /* UIbutton+Extention.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		F9A3F4ED20C0140500C3EAA7 /* PCH */ = {
+		F9A3F4ED20C0140500C3EAA7 /* Comman */ = {
 			isa = PBXGroup;
 			children = (
 				F9A3F4EF20C0160D00C3EAA7 /* Comman.swift */,
+				F96C514E20C1155E003D0A57 /* officialDemoNavi-Swift-Bridging-Header.h */,
 			);
-			path = PCH;
+			path = Comman;
 			sourceTree = "<group>";
 		};
 		F9A3F4F120C032F900C3EAA7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F9EC449C20C12B5100172408 /* Other */,
+				F9EC449920C12AF900172408 /* Model */,
 				F9A3F4F520C0341E00C3EAA7 /* Controller */,
-				F9A3F4F620C0341E00C3EAA7 /* Model */,
-				F9A3F4F420C0341E00C3EAA7 /* View */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		F9A3F4F420C0341E00C3EAA7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F9A3F4F520C0341E00C3EAA7 /* Controller */ = {
@@ -133,13 +137,6 @@
 				F9A3F4F720C0343200C3EAA7 /* HomeViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		F9A3F4F620C0341E00C3EAA7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F9A3F4F920C0343E00C3EAA7 /* Profile */ = {
@@ -259,6 +256,23 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		F9EC449920C12AF900172408 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9EC449A20C12B0500172408 /* LocationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9EC449C20C12B5100172408 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F9EC449F20C132A000172408 /* data.json */,
+				F9EC449D20C12B5F00172408 /* locationData.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -323,6 +337,8 @@
 			files = (
 				F9D82E8F20BFF37800744560 /* LaunchScreen.storyboard in Resources */,
 				F9D82E8C20BFF37800744560 /* Assets.xcassets in Resources */,
+				F9EC449E20C12B5F00172408 /* locationData.plist in Resources */,
+				F9EC44A020C132A000172408 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,9 +397,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+				"${PODS_ROOT}/AMapNavi/AMapNaviKit.framework/AMapNavi.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -400,8 +420,10 @@
 				F9A3F4F020C0160D00C3EAA7 /* Comman.swift in Sources */,
 				F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */,
 				F9D82E9F20BFF5BF00744560 /* BaseTableViewController.swift in Sources */,
+				F9EC449B20C12B0500172408 /* LocationModel.swift in Sources */,
 				F9A3F4F820C0343200C3EAA7 /* HomeViewController.swift in Sources */,
 				F9A3F50420C034BB00C3EAA7 /* FavoriteViewController.swift in Sources */,
+				F9EC44A220C13F1900172408 /* CYWNetWorkManager.swift in Sources */,
 				F9D82EA320BFF5E600744560 /* BaseViewController.swift in Sources */,
 				F9A3F4E620C00A0F00C3EAA7 /* UIbutton+Extention.swift in Sources */,
 				F9A3F50220C034A800C3EAA7 /* ProfileViewController.swift in Sources */,
@@ -545,7 +567,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenyouwen.ForHJH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chenyouwen/Documents/GitHub/ForHJH/ForHJH/ForHJH/Classess/Other/Comman/officialDemoNavi-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -565,7 +587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenyouwen.ForHJH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chenyouwen/Documents/GitHub/ForHJH/ForHJH/ForHJH/Classess/Other/Comman/officialDemoNavi-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

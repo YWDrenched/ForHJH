@@ -10,5 +10,6 @@ pod "YYModel"
 pod "SDWebImage"
 pod "SVProgressHUD"
 pod "SnapKit"
-
+pod 'AMapNavi'
+pod "AMapLocation"
 end

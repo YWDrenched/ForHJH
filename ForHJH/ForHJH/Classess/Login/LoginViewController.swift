@@ -60,14 +60,16 @@ class LoginViewController: BaseViewController {
         var userNameFiled = UITextField()
         userNameFiled.placeholder = "输入爱的的号码牌"
         userNameFiled.borderStyle = .roundedRect
+        userNameFiled.text = "1"
         return userNameFiled
     }()
     
     lazy var passwordFiled: UITextField = {
-        var userNameFiled = UITextField()
-        userNameFiled.placeholder = "输入爱的的指令"
-        userNameFiled.borderStyle = .roundedRect
-        return userNameFiled
+        var passwordFiled = UITextField()
+        passwordFiled.placeholder = "输入爱的的指令"
+        passwordFiled.borderStyle = .roundedRect
+        passwordFiled.text = "1"
+        return passwordFiled
     }()
     
     @objc private func hahah() {
