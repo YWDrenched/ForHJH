@@ -10,32 +10,28 @@ import UIKit
 
 class LocationModel: NSObject {
     
-    var latitude:String?
+    @objc var latitude:String?
     
-    var longitude:String?
+    @objc var longitude:String?
     
-//    
-//    init(dict:[String:String]) {
-//        super.init()
-//        
-//        setValuesForKeys(dict)
-//        
-//    }
-//    
-//    
-//    
-//    func loadData()-> NSArray{
-//        guard let path = Bundle.main.path(forResource: "locationData", ofType: "plist"),
-//            let arr = NSArray(contentsOfFile: path)else{
-//                return []
-//        }
-//        return arr
-//    }
-//
-//    
-//    override func value(forUndefinedKey key: String) -> Any? {
-//        return nil
-//    }
+    @objc var title:String?
+    
+    @objc var subTitle:String?
+ 
+    
+    init(dict:[String:String]) {
+        super.init()
+        setValuesForKeys(dict)
+    }
+
+   
+    override var description: String{
+        return "la:\(String(describing: latitude))\n long:\(String(describing:longitude))"
+    }
+    
+    override func value(forUndefinedKey key: String) -> Any? {
+        return key
+    }
     
     
 }
