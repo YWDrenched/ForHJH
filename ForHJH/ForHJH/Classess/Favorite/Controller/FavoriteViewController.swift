@@ -8,29 +8,69 @@
 
 import UIKit
 
-class FavoriteViewController: BaseViewController {
-var mapView:MAMapView!
+class FavoriteViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+    
+//    var dataArr:[LocationModel]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        view.addSubview(tableView)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArr.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cellID = ""
+        let type = dataArr[indexPath.row].type ?? ""
+        if type == "1" {
+            cellID = "ThisCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! EatSubCell
+            return cell
+            
+        }else{
+            cellID = "cell2"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! EatCell
+            cell.model = dataArr[indexPath.row]
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let type = dataArr[indexPath.row].type ?? ""
+        if type == "1" {
+            return 300
+        }
+        return 150
+    }
+    
+    
+    lazy var dataArr: [LocationModel] = {
+        var dataArr = [LocationModel]()
+        if let path = Bundle.main.path(forResource: "locationData", ofType: ".plist"),
+            let arr = NSArray(contentsOfFile: path){
+            for dict in arr{
+                let model = LocationModel(dict: dict as! [String : String])
+                dataArr.append(model)
+            }
+        }
+        return dataArr
+    }()
+    
+    
+    lazy var tableView: UITableView = {
+        var tableView = UITableView(frame: kScreenBounds)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "EatCell", bundle: nil), forCellReuseIdentifier: "cell2")
+        tableView.register(UINib(nibName: "EatSubCell", bundle: nil), forCellReuseIdentifier: "ThisCell")
+//        tableView.separatorStyle = .none
+
+        return tableView
+    }()
+    
 
 }

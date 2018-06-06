@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController,MAMapViewDelegate,AMapLocationManag
     var walkManager : AMapNaviWalkManager!
     var endPoint : AMapNaviPoint?
     var startPoint : AMapNaviPoint?
+
    
 
 
@@ -32,13 +33,8 @@ class HomeViewController: BaseViewController,MAMapViewDelegate,AMapLocationManag
         initNav()
     }
     
-    func initNav(){
-        walkManager = AMapNaviWalkManager()
-        walkManager.delegate = self
-    }
-    
+    //    MARK:加载本地数据
     func loadData() -> (){
-        
         guard let path = Bundle.main.path(forResource: "locationData", ofType: ".plist"),
             let arr = NSArray(contentsOfFile: path) as? [[String:String]] else{
                 print("加载错误")
@@ -56,7 +52,6 @@ class HomeViewController: BaseViewController,MAMapViewDelegate,AMapLocationManag
             annotation.coordinate = coordinate
             self.annotations.append(annotation)
         }
-        
         DispatchQueue.main.async {
             self.mapView.addAnnotations(self.annotations)
         }
@@ -70,6 +65,7 @@ class HomeViewController: BaseViewController,MAMapViewDelegate,AMapLocationManag
         showNaviRoutes()
     }
     
+    //MARK:mapView代理
     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
         if annotation.isKind(of: MAUserLocation.self) {
             return nil
@@ -83,18 +79,16 @@ class HomeViewController: BaseViewController,MAMapViewDelegate,AMapLocationManag
         mapAnnotionView?.canShowCallout = true
         mapAnnotionView?.isDraggable = false
         mapAnnotionView?.didClickItemBlock = {
-            
-            
             self.walkManager.calculateWalkRoute(withStart: [self.startPoint!], end: [self.endPoint!])
         }
 //        mapAnnotionView.animatesDrop = false
         return mapAnnotionView
     }
-    //点击气泡回调
-//    func mapView(_ mapView: MAMapView!, didAnnotationViewCalloutTapped view: MAAnnotationView!) {
-//        print("1")
-//
-//    }
+//    点击气泡回调
+    func mapView(_ mapView: MAMapView!, didAnnotationViewCalloutTapped view: MAAnnotationView!) {
+        print("点击了气泡")
+
+    }
     //点击annotation回调
     func mapView(_ mapView: MAMapView!, didSelect view: MAAnnotationView!) {
         print(1)
@@ -106,33 +100,39 @@ class HomeViewController: BaseViewController,MAMapViewDelegate,AMapLocationManag
         }
     }
     
+    
+    func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
+        if overlay.isKind(of: MAPolyline.self) {
+            let renderer: MAPolylineRenderer = MAPolylineRenderer(overlay: overlay)
+            renderer.lineWidth = 8.0
+            renderer.strokeColor = UIColor.cyan
+            
+            return renderer
+        }
+        return nil
+    }
+    
+    //MARK:显示地图路径
     func showNaviRoutes() {
-        
         guard let aRoute = walkManager.naviRoute else {
             return
         }
-        
-//        mapView.removeOverlays(mapView.overlays)
-//        routeIndicatorInfoArray.removeAll()
-        
+        mapView.removeOverlays(mapView.overlays)
+
         //将路径显示到地图上
         var coords = [CLLocationCoordinate2D]()
         for coordinate in aRoute.routeCoordinates {
             coords.append(CLLocationCoordinate2D.init(latitude: Double(coordinate.latitude), longitude: Double(coordinate.longitude)))
         }
-        
         //添加路径Polyline
         let polyline = MAPolyline(coordinates: &coords, count: UInt(aRoute.routeCoordinates.count))!
-        let selectablePolyline = SelectableOverlay(aOverlay: polyline)
-        
-        mapView.add(selectablePolyline)
-//        routeIndicatorInfoArray.append(info)
-        
-//        mapView.showAnnotations(mapView.annotations, animated: false)
-//        routeIndicatorView.reloadData()
+        mapView.add(polyline)
+
         
        
     }
+    
+//    MARK:初始化
     
     func setupUI() {
         mapView.addSubview(locationBtn)
@@ -157,6 +157,12 @@ class HomeViewController: BaseViewController,MAMapViewDelegate,AMapLocationManag
         locationManager = AMapLocationManager()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+    }
+    
+    func initNav(){
+        walkManager = AMapNaviWalkManager()
+        walkManager.delegate = self
+        
     }
     
     lazy var locationBtn: UIButton = {

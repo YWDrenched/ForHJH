@@ -17,6 +17,8 @@ class LocationModel: NSObject {
     @objc var title:String?
     
     @objc var subTitle:String?
+    
+    @objc var type:String?
  
     
     init(dict:[String:String]) {

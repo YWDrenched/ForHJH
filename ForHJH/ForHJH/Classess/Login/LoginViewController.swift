@@ -9,38 +9,83 @@
 import UIKit
 import SnapKit
 import SVProgressHUD
+import AVKit
+import AVFoundation
 
 class LoginViewController: BaseViewController {
     
-
+    var player:AVPlayer!
+    var playerLayer : AVPlayerLayer!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupAV()
         setupUI()
     }
+    
+  
+    private func setupAV(){
+        guard let path = Bundle.main.path(forResource: "WeChatSight9", ofType: ".mp4")
+                 else{
+                print("找不到本地视屏路径")
+                return
+        }
+        let videoURL = URL(fileURLWithPath: path)
+        player = AVPlayer(url: videoURL)
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        view.layer.addSublayer(playerLayer)
+        NotificationCenter.default.addObserver(self, selector: #selector(videoDidFinshed), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(appEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        player.play()
+        player.volume = 0
+//        player.rate = 1.0
+        
+    }
+    
+    @objc func videoDidFinshed() {
+        player.seek(to: kCMTimeZero)
+        player.play()
+        
+    }
+    
+    @objc func appEnterForeground(){
+        player.play()
+    }
+    
+    @objc func appEnterBackground(){
+                player.pause()
+    }
+    
     private func setupUI(){
         
-        view.addSubview(logImg)
-        logImg.addSubview(loginBtn)
-        logImg.addSubview(userNameFiled)
-        logImg.addSubview(passwordFiled)
+//        view.addSubview(loginBtn)
+//        logImg.addSubview(loginBtn)
+//        logImg.addSubview(userNameFiled)
+//        logImg.addSubview(passwordFiled)
         
         
+//        loginBtn.snp.makeConstraints { (make)-> Void in
+//            make.bottom.equalTo(view).offset(-50)
+//            make.centerX.equalTo(view)
+//        }
+//        userNameFiled.snp.makeConstraints { (make)->Void in
+//            make.centerX.equalTo(view)
+//            make.left.equalTo(view).offset(20)
+//            make.top.equalTo(view).offset(80)
+//        }
+//        passwordFiled.snp.makeConstraints { (make)->Void in
+//            make.centerX.equalTo(view)
+//            make.left.equalTo(view).offset(20)
+//            make.top.equalTo(userNameFiled.snp.bottom).offset(20)
+//        }
+        
+        view.addSubview(loginBtn)
         loginBtn.snp.makeConstraints { (make)-> Void in
             make.bottom.equalTo(view).offset(-50)
             make.centerX.equalTo(view)
-        }
-        userNameFiled.snp.makeConstraints { (make)->Void in
-            make.centerX.equalTo(view)
-            make.left.equalTo(view).offset(20)
-            make.top.equalTo(view).offset(80)
-        }
-        passwordFiled.snp.makeConstraints { (make)->Void in
-            make.centerX.equalTo(view)
-            make.left.equalTo(view).offset(20)
-            make.top.equalTo(userNameFiled.snp.bottom).offset(20)
         }
         
     }
@@ -80,6 +125,12 @@ class LoginViewController: BaseViewController {
         modalPresentationStyle = .pageSheet
         present(BaseTableViewController(), animated: true, completion: nil)
         
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        player.pause()
+        playerLayer.removeFromSuperlayer()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

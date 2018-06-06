@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThisCell" rowHeight="181" id="Q7e-0F-Ezl" customClass="EatSubCell" customModule="ForHJH" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q7e-0F-Ezl" id="ql1-rt-3xO">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="180.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJt-8W-V3l">
+                        <rect key="frame" x="8" y="8" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="WechatIMG11" translatesAutoresizingMaskIntoConstraints="NO" id="Xx0-EQ-wgc">
+                        <rect key="frame" x="8" y="37" width="359" height="135.5"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Xx0-EQ-wgc" secondAttribute="trailing" constant="8" id="IFO-Om-UUK"/>
+                    <constraint firstItem="Xx0-EQ-wgc" firstAttribute="leading" secondItem="ql1-rt-3xO" secondAttribute="leading" constant="8" id="V1D-YV-Aqb"/>
+                    <constraint firstItem="tJt-8W-V3l" firstAttribute="leading" secondItem="ql1-rt-3xO" secondAttribute="leading" constant="8" id="WPN-fN-y6Z"/>
+                    <constraint firstItem="Xx0-EQ-wgc" firstAttribute="top" secondItem="tJt-8W-V3l" secondAttribute="bottom" constant="8" id="gPY-wT-PcG"/>
+                    <constraint firstAttribute="bottom" secondItem="Xx0-EQ-wgc" secondAttribute="bottom" constant="8" id="k5j-oH-Mvc"/>
+                    <constraint firstItem="tJt-8W-V3l" firstAttribute="top" secondItem="ql1-rt-3xO" secondAttribute="top" constant="8" id="w2A-OA-RGS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="73.5" y="93.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="WechatIMG11" width="700" height="933"/>
+    </resources>
+</document>

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B40199B2579435DA4FB77AEF /* Pods_ForHJH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7A078FBA06B92E806963AF /* Pods_ForHJH.framework */; };
+		F970443720C62AAF00F16D58 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970443620C62AAF00F16D58 /* DetailViewController.swift */; };
+		F970443A20C62D5C00F16D58 /* WeChatSight9.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F970443920C62D5C00F16D58 /* WeChatSight9.mp4 */; };
+		F970444220C64FAA00F16D58 /* EatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970444020C64FAA00F16D58 /* EatCell.swift */; };
+		F970444320C64FAA00F16D58 /* EatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970444120C64FAA00F16D58 /* EatCell.xib */; };
+		F970444520C6709100F16D58 /* EatSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970444420C6709100F16D58 /* EatSubCell.swift */; };
+		F970444720C679CD00F16D58 /* EatSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970444620C679CD00F16D58 /* EatSubCell.xib */; };
 		F9A3F4E620C00A0F00C3EAA7 /* UIbutton+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F4E520C00A0F00C3EAA7 /* UIbutton+Extention.swift */; };
 		F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A3F4E720C00D2600C3EAA7 /* LoginViewController.swift */; };
 		F9A3F4EB20C0110000C3EAA7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A3F4EC20C0110000C3EAA7 /* SnapKit.framework */; };
@@ -33,6 +39,12 @@
 		A689AE9E85722198F0010704 /* Pods-ForHJH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForHJH.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH.release.xcconfig"; sourceTree = "<group>"; };
 		E2D55A791819847D8482D096 /* Pods-ForHJH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForHJH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH.debug.xcconfig"; sourceTree = "<group>"; };
 		F96C514E20C1155E003D0A57 /* officialDemoNavi-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "officialDemoNavi-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		F970443620C62AAF00F16D58 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F970443920C62D5C00F16D58 /* WeChatSight9.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeChatSight9.mp4; sourceTree = "<group>"; };
+		F970444020C64FAA00F16D58 /* EatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatCell.swift; sourceTree = "<group>"; };
+		F970444120C64FAA00F16D58 /* EatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EatCell.xib; sourceTree = "<group>"; };
+		F970444420C6709100F16D58 /* EatSubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatSubCell.swift; sourceTree = "<group>"; };
+		F970444620C679CD00F16D58 /* EatSubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EatSubCell.xib; sourceTree = "<group>"; };
 		F9A3F4E520C00A0F00C3EAA7 /* UIbutton+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIbutton+Extention.swift"; sourceTree = "<group>"; };
 		F9A3F4E720C00D2600C3EAA7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F9A3F4EA20C010D200C3EAA7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,9 +100,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F970443820C62D4F00F16D58 /* Soure */ = {
+			isa = PBXGroup;
+			children = (
+				F970443920C62D5C00F16D58 /* WeChatSight9.mp4 */,
+			);
+			path = Soure;
+			sourceTree = "<group>";
+		};
+		F970443F20C64F9B00F16D58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F970444020C64FAA00F16D58 /* EatCell.swift */,
+				F970444120C64FAA00F16D58 /* EatCell.xib */,
+				F970444420C6709100F16D58 /* EatSubCell.swift */,
+				F970444620C679CD00F16D58 /* EatSubCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F9A3F4DF20C009B200C3EAA7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F970443820C62D4F00F16D58 /* Soure */,
 				F9A3F4E720C00D2600C3EAA7 /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -139,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				F9A3F4F720C0343200C3EAA7 /* HomeViewController.swift */,
+				F970443620C62AAF00F16D58 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -147,8 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				F9A3F4FA20C0343E00C3EAA7 /* Controller */,
-				F9A3F4FB20C0343E00C3EAA7 /* Model */,
-				F9A3F4FC20C0343E00C3EAA7 /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -161,26 +192,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F9A3F4FB20C0343E00C3EAA7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F9A3F4FC20C0343E00C3EAA7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		F9A3F4FD20C0349C00C3EAA7 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				F970443F20C64F9B00F16D58 /* View */,
 				F9A3F4FE20C0349C00C3EAA7 /* Controller */,
-				F9A3F4FF20C0349C00C3EAA7 /* Model */,
-				F9A3F50020C0349C00C3EAA7 /* View */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -191,20 +207,6 @@
 				F9A3F50320C034BB00C3EAA7 /* FavoriteViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		F9A3F4FF20C0349C00C3EAA7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F9A3F50020C0349C00C3EAA7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F9AF110D20C23B4F0081FDFA /* View */ = {
@@ -349,6 +351,9 @@
 				F9D82E8F20BFF37800744560 /* LaunchScreen.storyboard in Resources */,
 				F9D82E8C20BFF37800744560 /* Assets.xcassets in Resources */,
 				F9EC449E20C12B5F00172408 /* locationData.plist in Resources */,
+				F970444720C679CD00F16D58 /* EatSubCell.xib in Resources */,
+				F970443A20C62D5C00F16D58 /* WeChatSight9.mp4 in Resources */,
+				F970444320C64FAA00F16D58 /* EatCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +434,9 @@
 			files = (
 				F9A3F4F020C0160D00C3EAA7 /* Comman.swift in Sources */,
 				F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */,
+				F970444220C64FAA00F16D58 /* EatCell.swift in Sources */,
 				F9D82E9F20BFF5BF00744560 /* BaseTableViewController.swift in Sources */,
+				F970444520C6709100F16D58 /* EatSubCell.swift in Sources */,
 				F9EC449B20C12B0500172408 /* LocationModel.swift in Sources */,
 				F9A3F4F820C0343200C3EAA7 /* HomeViewController.swift in Sources */,
 				F9A3F50420C034BB00C3EAA7 /* FavoriteViewController.swift in Sources */,
@@ -439,6 +446,7 @@
 				F9A3F4E620C00A0F00C3EAA7 /* UIbutton+Extention.swift in Sources */,
 				F9A3F50220C034A800C3EAA7 /* ProfileViewController.swift in Sources */,
 				F9D82EA120BFF5D800744560 /* BaseNavController.swift in Sources */,
+				F970443720C62AAF00F16D58 /* DetailViewController.swift in Sources */,
 				F9AF110F20C23B780081FDFA /* WalkNavButton.swift in Sources */,
 				F9D82E8520BFF37800744560 /* AppDelegate.swift in Sources */,
 			);
@@ -575,7 +583,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ForHJH/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenyouwen.ForHJH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -595,7 +603,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ForHJH/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenyouwen.ForHJH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
