@@ -12,5 +12,6 @@ pod "SVProgressHUD"
 pod "SnapKit"
 pod 'AMapNavi'
 pod "AMapLocation"
+pod "Kingfisher"
 
 end

@@ -8,24 +8,60 @@
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
-
+class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    var dataArr = [TestModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let dict = ["userId":"USR1000000011PnicVRp",
-//            "type":"CDZ"]
+        view.addSubview(tableView)
+        loadData()
+    }
+    
+    func loadData(){
         CYWNetWorkManager.sharedManger.requset(requestMethon: .GET, URLString: "http://live.9158.com/Room/GetNewRoomOnline?page=1", params: nil) { (result, error) in
-            print(result ?? "   2222")
-            if error {
+//            if error {
+//                print("网络连接失败")
+//                return
+//            }
+//            print(result)
+            
+            guard let msg = result as? [String:Any],
+                let data = msg["data"] as? [String:Any],
+                let list = data["list"],
+                let arr = NSArray.yy_modelArray(with: TestModel.self, json: list) as? [TestModel] else{
                 return
+            }
+            self.dataArr = arr
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArr.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "testCellID") as? TestCell
+        cell?.model = dataArr[indexPath.row]
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
+    
+    lazy var tableView: UITableView = {
+        var tableView = UITableView(frame: kScreenBounds)
+        tableView.delegate = self
+        tableView.dataSource = self
+        let nib = UINib(nibName: "TestCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "testCellID")
+        return tableView
+    }()
     
 
 }

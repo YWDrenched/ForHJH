@@ -16,7 +16,7 @@
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>1</string>
+		<string>2</string>
 		<key>title</key>
 		<string>米窝寿司外卖店(一元路店)</string>
 		<key>subTitle</key>
@@ -88,7 +88,7 @@
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>1</string>
+		<string>2</string>
 		<key>title</key>
 		<string>胖子无名锅仔</string>
 		<key>subTitle</key>
@@ -112,7 +112,7 @@
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>1</string>
+		<string>2</string>
 		<key>title</key>
 		<string>花子牛肉粉 </string>
 		<key>subTitle</key>

@@ -22,10 +22,7 @@ class CYWNetWorkManager: AFHTTPSessionManager {
     //MARK:网络请求 post get
     func requset(requestMethon:CYWHttpMethon,URLString:String,params:Any?,completion:@escaping (Any?, Bool) -> ()) {
         self.requestSerializer = AFJSONRequestSerializer()
-//        self.responseSerializer = AFHTTPResponseSerializer()
         self.responseSerializer.acceptableContentTypes = NSSet(objects: "text/plain", "text/html","application/javascript","application/json") as? Set<String>
-
-        
         let successTask = {(task:URLSessionDataTask,json:Any?)->() in
             completion(json,true)
         }
@@ -33,7 +30,13 @@ class CYWNetWorkManager: AFHTTPSessionManager {
             print("网络请求失败:\(error)")
             completion(nil,false)
         }
-        
+//        post(URLString, parameters: params, progress: nil,
+//             success: { (task, result) in
+//           
+//        },
+//             failure: { (task,error) in
+//            
+//        })
         if requestMethon == .POST {
             post(URLString,
              parameters: params,
