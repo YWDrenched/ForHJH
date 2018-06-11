@@ -14,6 +14,9 @@
 		F970444320C64FAA00F16D58 /* EatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970444120C64FAA00F16D58 /* EatCell.xib */; };
 		F970444520C6709100F16D58 /* EatSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970444420C6709100F16D58 /* EatSubCell.swift */; };
 		F970444720C679CD00F16D58 /* EatSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970444620C679CD00F16D58 /* EatSubCell.xib */; };
+		F970ABE820CDFC1E00262973 /* EatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970ABE720CDFC1E00262973 /* EatDetailViewController.swift */; };
+		F970ABEA20CE0E2800262973 /* SelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970ABE920CE0E2800262973 /* SelectView.xib */; };
+		F970ABEC20CE0FA900262973 /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970ABEB20CE0FA900262973 /* SelectView.swift */; };
 		F97BE82420C8B0CC00C00DDF /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97BE82220C8B0CC00C00DDF /* TestCell.swift */; };
 		F97BE82520C8B0CC00C00DDF /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97BE82320C8B0CC00C00DDF /* TestCell.xib */; };
 		F97BE82720C8B0E600C00DDF /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97BE82620C8B0E600C00DDF /* TestModel.swift */; };
@@ -48,6 +51,9 @@
 		F970444120C64FAA00F16D58 /* EatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EatCell.xib; sourceTree = "<group>"; };
 		F970444420C6709100F16D58 /* EatSubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatSubCell.swift; sourceTree = "<group>"; };
 		F970444620C679CD00F16D58 /* EatSubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EatSubCell.xib; sourceTree = "<group>"; };
+		F970ABE720CDFC1E00262973 /* EatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatDetailViewController.swift; sourceTree = "<group>"; };
+		F970ABE920CE0E2800262973 /* SelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectView.xib; sourceTree = "<group>"; };
+		F970ABEB20CE0FA900262973 /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 		F97BE82220C8B0CC00C00DDF /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 		F97BE82320C8B0CC00C00DDF /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
 		F97BE82620C8B0E600C00DDF /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
@@ -123,6 +129,8 @@
 				F970444120C64FAA00F16D58 /* EatCell.xib */,
 				F970444420C6709100F16D58 /* EatSubCell.swift */,
 				F970444620C679CD00F16D58 /* EatSubCell.xib */,
+				F970ABE920CE0E2800262973 /* SelectView.xib */,
+				F970ABEB20CE0FA900262973 /* SelectView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				F9A3F50320C034BB00C3EAA7 /* FavoriteViewController.swift */,
+				F970ABE720CDFC1E00262973 /* EatDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -377,6 +386,7 @@
 			files = (
 				F9D82E8F20BFF37800744560 /* LaunchScreen.storyboard in Resources */,
 				F9D82E8C20BFF37800744560 /* Assets.xcassets in Resources */,
+				F970ABEA20CE0E2800262973 /* SelectView.xib in Resources */,
 				F9EC449E20C12B5F00172408 /* locationData.plist in Resources */,
 				F970444720C679CD00F16D58 /* EatSubCell.xib in Resources */,
 				F970443A20C62D5C00F16D58 /* WeChatSight9.mp4 in Resources */,
@@ -464,12 +474,14 @@
 			files = (
 				F9A3F4F020C0160D00C3EAA7 /* Comman.swift in Sources */,
 				F97BE82720C8B0E600C00DDF /* TestModel.swift in Sources */,
+				F970ABEC20CE0FA900262973 /* SelectView.swift in Sources */,
 				F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */,
 				F970444220C64FAA00F16D58 /* EatCell.swift in Sources */,
 				F9D82E9F20BFF5BF00744560 /* BaseTableViewController.swift in Sources */,
 				F970444520C6709100F16D58 /* EatSubCell.swift in Sources */,
 				F9EC449B20C12B0500172408 /* LocationModel.swift in Sources */,
 				F9A3F4F820C0343200C3EAA7 /* HomeViewController.swift in Sources */,
+				F970ABE820CDFC1E00262973 /* EatDetailViewController.swift in Sources */,
 				F9A3F50420C034BB00C3EAA7 /* FavoriteViewController.swift in Sources */,
 				F9E8E87120C2787D00A77178 /* SelectableOverlay.swift in Sources */,
 				F9EC44A220C13F1900172408 /* CYWNetWorkManager.swift in Sources */,

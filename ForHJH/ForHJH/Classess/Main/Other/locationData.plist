@@ -40,18 +40,6 @@
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>2</string>
-		<key>title</key>
-		<string>米窝寿司外卖店(一元路店)</string>
-		<key>subTitle</key>
-		<string>中国湖北省武汉市江岸区一元路4号</string>
-		<key>latitude</key>
-		<string>30.593300</string>
-		<key>longitude</key>
-		<string>114.302510</string>
-	</dict>
-	<dict>
-		<key>type</key>
 		<string>1</string>
 		<key>title</key>
 		<string>奈雪の茶(新天地店)</string>

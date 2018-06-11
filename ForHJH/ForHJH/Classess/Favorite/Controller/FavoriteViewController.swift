@@ -47,6 +47,13 @@ class FavoriteViewController: BaseViewController,UITableViewDelegate,UITableView
         return 150
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = EatDetailViewController()
+        vc.index = indexPath
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     lazy var dataArr: [LocationModel] = {
         var dataArr = [LocationModel]()
