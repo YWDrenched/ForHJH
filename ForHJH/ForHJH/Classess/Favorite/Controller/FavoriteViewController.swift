@@ -50,6 +50,7 @@ class FavoriteViewController: BaseViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = EatDetailViewController()
         vc.index = indexPath
+        vc.model = dataArr[indexPath.row]
         
         navigationController?.pushViewController(vc, animated: true)
     }
