@@ -13,5 +13,7 @@ pod "SnapKit"
 pod 'AMapNavi'
 pod "AMapLocation"
 pod "Kingfisher"
+pod "SDPhotoBrowser"
+pod 'JXPhotoBrowser'
 
 end

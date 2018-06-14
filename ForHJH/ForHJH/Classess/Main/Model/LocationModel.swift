@@ -19,6 +19,8 @@ class LocationModel: NSObject {
     @objc var subTitle:String?
     
     @objc var type:String?
+    
+    @objc var img:String?
  
     
     init(dict:[String:String]) {

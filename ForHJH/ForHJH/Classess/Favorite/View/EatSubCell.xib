@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThisCell" rowHeight="181" id="Q7e-0F-Ezl" customClass="EatSubCell" customModule="ForHJH" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThisCell" rowHeight="243" id="Q7e-0F-Ezl" customClass="EatSubCell" customModule="ForHJH" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="443" height="243"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q7e-0F-Ezl" id="ql1-rt-3xO">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="180.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="443" height="242.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJt-8W-V3l">
@@ -24,8 +24,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="WechatIMG11" translatesAutoresizingMaskIntoConstraints="NO" id="Xx0-EQ-wgc">
-                        <rect key="frame" x="8" y="37" width="359" height="135.5"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="WechatIMG11" translatesAutoresizingMaskIntoConstraints="NO" id="Xx0-EQ-wgc">
+                        <rect key="frame" x="8" y="37" width="426" height="195"/>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -37,7 +37,11 @@
                     <constraint firstItem="tJt-8W-V3l" firstAttribute="top" secondItem="ql1-rt-3xO" secondAttribute="top" constant="8" id="w2A-OA-RGS"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="73.5" y="93.5"/>
+            <connections>
+                <outlet property="picture" destination="Xx0-EQ-wgc" id="Rcm-RF-buM"/>
+                <outlet property="titleLabel" destination="tJt-8W-V3l" id="JtI-72-gu5"/>
+            </connections>
+            <point key="canvasLocation" x="107.5" y="124.5"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -7,37 +7,69 @@
 //
 
 import UIKit
+import SDPhotoBrowser
+import JXPhotoBrowser
 
-class EatDetailViewController: UIViewController,SelectViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+
+class EatDetailViewController: UIViewController,SelectViewDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CommentsViewDelegate,PhotoBrowserDelegate {
+    
+    
    
     
-    
-    var fileManager:FileManager!
+   
     var index:IndexPath?
     var flag:Int = 0
     var picture:UIImage?
     var arr=[UIImage]()
     var model:LocationModel!
+   
+    
+   
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory(rawValue: 13)!, FileManager.SearchPathDomainMask(rawValue: 1), true).last! + "/\(model.subTitle ?? "")"
-        print(path)
-        fileManager = FileManager.default
-        if !fileManager.fileExists(atPath: path) {
-            do{
-                try fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
-            }catch{
-                print("创建文件失败")
-            }
-        }
+        
         setupUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     
+    func photoBrowser(_ photoBrowser: PhotoBrowser, thumbnailViewForIndex index: Int) -> UIView? {
+        return collectionView.cellForItem(at: IndexPath(item: index, section: 0))
+    }
     
+    func photoBrowser(_ photoBrowser: PhotoBrowser, thumbnailImageForIndex index: Int) -> UIImage? {
+        let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! XiaoHuangCell
+
+        
+        
+        return cell.img
+    }
     
+    func numberOfPhotos(in photoBrowser: PhotoBrowser) -> Int {
+        return imgs.count
+    }
+    
+    @objc func keyboardWillShow(note:Notification) {
+        UIView.animate(withDuration: 0.3) {
+            self.commentsView.transform = CGAffineTransform(translationX: 0, y: -40)
+        }
+    }
+    
+    @objc func keyboardWillHide(note:Notification) {
+        UIView.animate(withDuration: 0.3) {
+            self.commentsView.transform = CGAffineTransform(translationX: 0, y: 40)
+        }
+    }
+   
     func setupUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(typeView)
@@ -45,10 +77,15 @@ class EatDetailViewController: UIViewController,SelectViewDelegate,UIScrollViewD
         typeView.addSubview(collectionView)
         typeView.addSubview(tableView)
         view.addSubview(addBtn)
+        view.addSubview(commentsView)
         
         addBtn.snp.makeConstraints { (make)->Void in
             make.centerX.equalTo(view)
             make.bottom.equalTo(view.snp.bottom).offset(-10)
+        }
+        commentsView.snp.makeConstraints { (make)->Void in
+            make.center.equalTo(view)
+            make.left.equalTo(view).offset(20)
         }
     }
     
@@ -64,14 +101,22 @@ class EatDetailViewController: UIViewController,SelectViewDelegate,UIScrollViewD
             
         }else if flag == 1{//评论
             print(2)
+            self.commentsView.isHidden = false
         }
     }
     
+    //    MARK:imagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info["UIImagePickerControllerOriginalImage"] as! UIImage
-        picture = image
-        arr.append(image)
-        
+        guard let imgStr = UIImageJPEGRepresentation(image, 0.1)?.base64EncodedString()
+            else{
+                return
+            }
+    
+        let path = NSHomeDirectory() + "/Documents/\(model.subTitle ?? "").plist"
+        imgs.add(imgStr)
+        imgs.write(toFile: path, atomically: true)
+
         picker.dismiss(animated: true, completion: nil)
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -82,10 +127,22 @@ class EatDetailViewController: UIViewController,SelectViewDelegate,UIScrollViewD
     func selectViewBtnClickWithTag(sender:UIButton) {
         let page = sender.tag - 1000
         typeView.setContentOffset(CGPoint(x: page * Int(typeView.bounds.width), y: 0), animated: true)
+        flag = Int(page)
+        page == 0 ? (addBtn.setTitle("点击添加照骗", for: .normal)):addBtn.setTitle("点击添加评论", for: .normal)
     }
     
-  
-    
+//    MARK:commentsViewDelegate
+    func commentViewComfirmBtnClick(comments: String?) {
+        commentsArr.add(comments ?? "")
+        let path = NSHomeDirectory() + "/Documents/\(model.subTitle ?? "")"+"Coments.plist"
+        commentsArr.write(toFile: path, atomically: true)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.commentsView.isHidden = true
+            self.view.endEditing(true)
+        }
+    }
+//    MARK:scrollerVierDelegate
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView.isKind(of: UICollectionView.self) || scrollView.isKind(of: UITableView.self) {
             return
@@ -100,37 +157,64 @@ class EatDetailViewController: UIViewController,SelectViewDelegate,UIScrollViewD
         page == 0 ? (addBtn.setTitle("点击添加照骗", for: .normal)):addBtn.setTitle("点击添加评论", for: .normal)
     }
     
-    
 //    MARK:collectionViewDataSoure
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arr.count
+        return imgs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewID", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewID", for: indexPath) as! XiaoHuangCell
         cell.backgroundColor = UIColor.UIColorRandom()
         
-        if arr.count != 0 {
-            let img = UIImageView(image: arr[indexPath.item])
-            img.frame = cell.contentView.bounds
-            cell.contentView.addSubview(img)
+        if imgs.count != 0 {
+            let img = UIImage(data: Data(base64Encoded: imgs[indexPath.item] as! String )!)
+            cell.img = img
         }
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        PhotoBrowser.show(byViewController: self, delegate: self, index: indexPath.item)
+    }
+    
+    
     
 //    MARK:tableViewDataSoure
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return commentsArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCellID", for: indexPath)
-        cell.textLabel?.text = "哇，好好吃\(indexPath.row)"
+        cell.textLabel?.text = commentsArr[indexPath.row] as? String
+        cell.selectionStyle = .none
         return cell
     }
     
+    
+//    MARK:懒加载
+    
+    
+    
+    
+    lazy var imgs: NSMutableArray = {
+        let path = NSHomeDirectory() + "/Documents/\(model.subTitle ?? "").plist"
+        guard var imgs = NSMutableArray(contentsOfFile: path)
+            else{
+                return NSMutableArray()
+        }
+        return imgs
+    }()
+    
+    lazy var commentsArr:NSMutableArray = {
+        let path = NSHomeDirectory() + "/Documents/\(model.subTitle ?? "")"+"Coments.plist"
+        guard var commentsArr = NSMutableArray(contentsOfFile: path)
+            else{
+                return NSMutableArray()
+        }
+        return commentsArr
+    }()
     
     lazy var typeView: UIScrollView = {
         let h = Int(kScreenHeight) - kNavHeight - 80 - kTabbarHeight
@@ -165,7 +249,7 @@ class EatDetailViewController: UIViewController,SelectViewDelegate,UIScrollViewD
         var collectionView = UICollectionView(frame:CGRect(x: 0, y: 0, width: kScreenWidth, height: typeView.bounds.size.height), collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionViewID")
+        collectionView.register(XiaoHuangCell.self, forCellWithReuseIdentifier: "collectionViewID")
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = UIColor.white
         return collectionView
@@ -186,5 +270,13 @@ class EatDetailViewController: UIViewController,SelectViewDelegate,UIScrollViewD
         addBtn.sizeToFit()
         return addBtn
     }()
- 
+    
+    lazy var commentsView: CommentsView = {
+        var commentsView = Bundle.main.loadNibNamed("CommentsView", owner: nil, options: nil)?.last as! CommentsView
+//        commentsView.frame = view.bounds
+        commentsView.delegate = self
+        commentsView.isHidden = true
+        return commentsView
+    }()
+    
 }

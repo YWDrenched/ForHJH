@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B40199B2579435DA4FB77AEF /* Pods_ForHJH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7A078FBA06B92E806963AF /* Pods_ForHJH.framework */; };
+		F9334CD520D0F15A0030D6F9 /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9334CD420D0F15A0030D6F9 /* CommentsView.xib */; };
+		F9334CD720D0F3330030D6F9 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9334CD620D0F3330030D6F9 /* CommentsView.swift */; };
+		F9334CDF20D210680030D6F9 /* XiaoHuangCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9334CDE20D210680030D6F9 /* XiaoHuangCell.swift */; };
 		F970443720C62AAF00F16D58 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970443620C62AAF00F16D58 /* DetailViewController.swift */; };
 		F970443A20C62D5C00F16D58 /* WeChatSight9.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F970443920C62D5C00F16D58 /* WeChatSight9.mp4 */; };
 		F970444220C64FAA00F16D58 /* EatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970444020C64FAA00F16D58 /* EatCell.swift */; };
@@ -44,6 +47,10 @@
 		6E7A078FBA06B92E806963AF /* Pods_ForHJH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForHJH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A689AE9E85722198F0010704 /* Pods-ForHJH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForHJH.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH.release.xcconfig"; sourceTree = "<group>"; };
 		E2D55A791819847D8482D096 /* Pods-ForHJH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForHJH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH.debug.xcconfig"; sourceTree = "<group>"; };
+		F9334CD420D0F15A0030D6F9 /* CommentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsView.xib; sourceTree = "<group>"; };
+		F9334CD620D0F3330030D6F9 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		F9334CD920D2056C0030D6F9 /* SDPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9334CDE20D210680030D6F9 /* XiaoHuangCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XiaoHuangCell.swift; sourceTree = "<group>"; };
 		F96C514E20C1155E003D0A57 /* officialDemoNavi-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "officialDemoNavi-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		F970443620C62AAF00F16D58 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F970443920C62D5C00F16D58 /* WeChatSight9.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeChatSight9.mp4; sourceTree = "<group>"; };
@@ -97,6 +104,7 @@
 		8B194297F2FF7E7049FD76BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9334CD920D2056C0030D6F9 /* SDPhotoBrowser.framework */,
 				F97BE82920C8BDD200C00DDF /* Kingfisher.framework */,
 				F9A3F4EC20C0110000C3EAA7 /* SnapKit.framework */,
 				F9A3F4EA20C010D200C3EAA7 /* SnapKit.framework */,
@@ -131,6 +139,9 @@
 				F970444620C679CD00F16D58 /* EatSubCell.xib */,
 				F970ABE920CE0E2800262973 /* SelectView.xib */,
 				F970ABEB20CE0FA900262973 /* SelectView.swift */,
+				F9334CD420D0F15A0030D6F9 /* CommentsView.xib */,
+				F9334CD620D0F3330030D6F9 /* CommentsView.swift */,
+				F9334CDE20D210680030D6F9 /* XiaoHuangCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -390,6 +401,7 @@
 				F9EC449E20C12B5F00172408 /* locationData.plist in Resources */,
 				F970444720C679CD00F16D58 /* EatSubCell.xib in Resources */,
 				F970443A20C62D5C00F16D58 /* WeChatSight9.mp4 in Resources */,
+				F9334CD520D0F15A0030D6F9 /* CommentsView.xib in Resources */,
 				F97BE82520C8B0CC00C00DDF /* TestCell.xib in Resources */,
 				F970444320C64FAA00F16D58 /* EatCell.xib in Resources */,
 			);
@@ -406,7 +418,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ForHJH/Pods-ForHJH-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/JXPhotoBrowser/JXPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SDPhotoBrowser/SDPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -416,7 +430,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -478,6 +494,7 @@
 				F9A3F4E820C00D2600C3EAA7 /* LoginViewController.swift in Sources */,
 				F970444220C64FAA00F16D58 /* EatCell.swift in Sources */,
 				F9D82E9F20BFF5BF00744560 /* BaseTableViewController.swift in Sources */,
+				F9334CD720D0F3330030D6F9 /* CommentsView.swift in Sources */,
 				F970444520C6709100F16D58 /* EatSubCell.swift in Sources */,
 				F9EC449B20C12B0500172408 /* LocationModel.swift in Sources */,
 				F9A3F4F820C0343200C3EAA7 /* HomeViewController.swift in Sources */,
@@ -490,6 +507,7 @@
 				F9A3F50220C034A800C3EAA7 /* ProfileViewController.swift in Sources */,
 				F97BE82420C8B0CC00C00DDF /* TestCell.swift in Sources */,
 				F9D82EA120BFF5D800744560 /* BaseNavController.swift in Sources */,
+				F9334CDF20D210680030D6F9 /* XiaoHuangCell.swift in Sources */,
 				F970443720C62AAF00F16D58 /* DetailViewController.swift in Sources */,
 				F9AF110F20C23B780081FDFA /* WalkNavButton.swift in Sources */,
 				F9D82E8520BFF37800744560 /* AppDelegate.swift in Sources */,

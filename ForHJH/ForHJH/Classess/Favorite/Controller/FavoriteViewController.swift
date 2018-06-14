@@ -24,27 +24,27 @@ class FavoriteViewController: BaseViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cellID = ""
-        let type = dataArr[indexPath.row].type ?? ""
-        if type == "1" {
-            cellID = "ThisCell"
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! EatSubCell
-            return cell
+        let cellID = "ThisCell"
+        //        let type = dataArr[indexPath.row].type ?? ""
+        //        if type == "1" {
+        //            cellID = "ThisCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! EatSubCell
+        cell.model = dataArr[indexPath.row]
+        return cell
             
-        }else{
-            cellID = "cell2"
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! EatCell
-            cell.model = dataArr[indexPath.row]
-            return cell
-        }
+//        }
+//        else{
+//            cellID = "cell2"
+//            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! EatCell
+//            cell.model = dataArr[indexPath.row]
+//            return cell
+//        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let type = dataArr[indexPath.row].type ?? ""
-        if type == "1" {
-            return 300
-        }
-        return 150
+
+        return 300
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
